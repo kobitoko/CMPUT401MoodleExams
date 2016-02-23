@@ -28,14 +28,18 @@ global $PAGE, $CFG, $DB;
 require_once('../../config.php');
 
 require_login();
-require_capability('local/demo:add', context_system::instance());
+require_capability('local/memplugin:add', context_system::instance());
+require_once($CFG->dirroot.'/local/memplugin/upload_form.php');
 $PAGE->set_context(context_system::instance());
 $PAGE->set_pagelayout('standard');
-$PAGE->set_title(get_string('pluginname', 'local_demo'));
-$PAGE->set_heading(get_string('pluginname', 'local_demo'));
-$PAGE->set_url($CFG->wwwroot.'/local/demo_plug-in/view.php');
+$PAGE->set_title(get_string('pluginname', 'local_memplugin'));
+$PAGE->set_heading(get_string('pluginname', 'local_memplugin'));
+$PAGE->set_url($CFG->wwwroot.'/local/memplugin/view.php');
+$mform = new upload_form();
 
-//echo $OUTPUT->header();
-//echo $OUTPUT->footer();
+echo $OUTPUT->header();
+//echo "Test text to see if works.";
+$mform->display();
+echo $OUTPUT->footer();
 
 ?>

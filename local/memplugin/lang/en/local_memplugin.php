@@ -27,8 +27,12 @@
 //$string['menuoption'] = 'Demo Plug-in';
 //$string['pluginname'] = 'CMPUT 401 Demo Plug-in';
 
-$string['menuoption'] = 'jaeyoon1 MEM Plugin (DEV build)';
-$string['pluginname'] = 'jaeyoon1 MEM Plugin (DEV)';
-$string['thesymmtricalspoon_jaeyoon1:add'] = 'You do not have permission to use the feeback';
+$string['menuoption'] = 'Mass Exam Marker Plugin';
+$string['pluginname'] = 'Mass Exam Marker Plugin';
+$string['buttonnext'] = 'Next';
+$string['buttonback'] = 'Back';
+$string['buttonupload'] = 'upload';
+$string['what_to_upload'] = 'PDF file to upload:';
+$string['filename'] = 'File name:';
 
 ?>
