@@ -26,15 +26,28 @@
 
 require_once '../../config.php';
 require_once $CFG->dirroot.'/lib/formslib.php';
-require_once $CFG->dirroot.'/lib/datalib.php';
+require_once $CFG->dirroot.'/lib/datalib.php'; // database library
 
 class sample_form extends moodleform {
+	//definition is the constructor that moodle will look for to create it.
 	function definition() {
 		global $CFG, $DB, $USER; //Declare our globals for use
 		$mform = $this->_form; //Tell this object to initialize with the properties of the Moodle form.
-
+		
 		//Add all your form elements here
-
+		$mform->addElement('header', 'food', get_string('food_heading','local_demo'));
+		$selection = array();
+		$selection[0] = "";
+		$selection[1] = get_string('food_choice1', 'local_demo');
+		$selection[2] = get_string('food_choice2', 'local_demo');
+		$selection[3] = get_string('food_choice3', 'local_demo');
+		$select = array();
+		$select[] = $mform->createElement('select','food_select', get_string('favourite_food', 'local_demo'),$selection);
+		// groups submit button with the dropdown menu
+		$select[] = $mform->createElement('submit', 'food_submit', get_string('food_submit_btn', 'local_demo'));
+		// array(' ') makes empty space so formatting is easier to read.
+		$mform->addElement('group', 'found_selection', get_string('food_selection', 'local_demo'), $select, array(' '),false);
+				
 	}
 	
 	//If you need to validate your form information, you can override  the parent's validation method and write your own.	
@@ -43,8 +56,8 @@ class sample_form extends moodleform {
 		global $DB, $CFG, $USER; //Declare them if you need them
 
 		//if ($data['data_name'] Some condition here)  {
-		//	$errors['element_to_display_error'] = get_string('error', 'local_demo_plug-in');
-		//}
+			//$errors['element_to_display_error'] = get_string('error', 'local_demo_plug-in');
+		}
 }
 
 ?>

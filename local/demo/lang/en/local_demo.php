@@ -24,7 +24,17 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-//$string['menuoption'] = 'Demo Plug-in';
+$string['menuoption'] = 'Demo Plug-in';
 $string['pluginname'] = 'CMPUT 401 Demo Plug-in';
+$string['username'] = 'The demo test.';
+$string['food_heading'] = 'Mmmmm foood.';
+$string['food_choice1'] = 'Good food.';
+$string['food_choice2'] = 'Ok food.';
+$string['food_choice3'] = 'Meh food.';
+$string['favourite_food'] = 'Good Food?';
+$string['food_submit_btn'] = 'PUT FOOOD oh!';
+$string['food_selection'] = 'Select da food';
+$string['submit_done'] = 'LOL ok then. Value=';
+$string['submit_fail'] = 'GET failed. Sorry.';
 
 ?>
