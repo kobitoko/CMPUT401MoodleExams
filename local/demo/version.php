@@ -1,5 +1,4 @@
 <?php
-
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -16,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Initial page for the plug-in
+ * Version control
  *
  * @package     local
  * @subpackage  demo_plug-in
@@ -24,18 +23,9 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-global $PAGE, $CFG, $DB;
-require_once('../../config.php');
-
-require_login();
-require_capability('local/demo_plug-in:add', context_system::instance());
-$PAGE->set_context(context_system::instance());
-$PAGE->set_pagelayout('standard');
-$PAGE->set_title(get_string('pluginname', 'local_demo_plug-in'));
-$PAGE->set_heading(get_string('pluginname', 'local_demo_plug-in'));
-$PAGE->set_url($CFG->wwwroot.'/local/demo_plug-in/view.php');
-
-//echo $OUTPUT->header();
-//echo $OUTPUT->footer();
+$plugin->version = 2016012300;
+$plugin->requires = 2011033006;
+$plugin->component = 'local_demo';
+$plugin->maturity = MATURITY_ALPHA;
 
 ?>

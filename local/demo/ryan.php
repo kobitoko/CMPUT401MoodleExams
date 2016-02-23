@@ -35,14 +35,14 @@ global $CFG, $PAGE, $DB;
 require_once('../../config.php');
 
 require_login();
-require_capability('local/memplugin:add', context_system::instance());
-require_once($CFG->dirroot.'/local/memplugin/ryan_form.php');
+require_capability('local/demo:add', context_system::instance());
+require_once($CFG->dirroot.'/local/demo/ryan_form.php');
 
 $PAGE->set_context(context_system::instance());
 $PAGE->set_pagelayout('standard');
-$PAGE->set_title(get_string('pluginname', 'memplugin'));
-$PAGE->set_heading(get_string('pluginname', 'memplugin'));
-$PAGE->set_url($CFG->wwwroot.'/local/\memplugin/ryan.php');
+$PAGE->set_title(get_string('pluginname', 'demo'));
+$PAGE->set_heading(get_string('pluginname', 'demo'));
+$PAGE->set_url($CFG->wwwroot.'/local/\demo/ryan.php');
 $kieran_form = new create_ryan_instance();
 
 //echo $OUTPUT->header();
@@ -55,10 +55,10 @@ $kieran_form = new create_ryan_instance();
 *  
 */
 if ($kieran_form->is_cancelled()) {
-	redirect($CFG->wwwroot.'/local/memplugin/view.php');
+	redirect($CFG->wwwroot.'/local/demo/view.php');
 } elseif ($data = $kieran_form->get_data()) {
 	$check = $data->test1;
-	redirect($CFG->wwwroot.'/local/memplugin/view.php');//'/local/rubricrepo_kboyle/kieran.php?id='.$data->test1);
+	redirect($CFG->wwwroot.'/local/demo/view.php');//'/local/demo/ryan.php?id='.$data->test1);
 } else {
 	echo $OUTPUT->header();
 	$kieran_form->display();

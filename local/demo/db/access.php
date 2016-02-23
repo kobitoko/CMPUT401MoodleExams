@@ -1,4 +1,5 @@
 <?php
+
 // This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
@@ -15,7 +16,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version control
+ * Defines the capabilities for the local plugin 'feedback_ec10'
  *
  * @package     local
  * @subpackage  demo_plug-in
@@ -23,9 +24,17 @@
  * @license     http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-$plugin->version = 2016012300;
-$plugin->requires = 2011033006;
-$plugin->component = 'local_demo_plug-in';
-$plugin->maturity = MATURITY_ALPHA;
+$capabilities = array(
+    
+    'local/demo:add' => array(
+        
+        'captype' => 'write',
+        'contextlevel' => CONTEXT_SYSTEM,
+        'archetypes' => array( // The roles that you want to allow
+            'teacher' => CAP_ALLOW,
+            'manager' => CAP_ALLOW
+        ),
+    ),
+);
 
 ?>
